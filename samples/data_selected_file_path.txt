@@ -1,0 +1,5 @@
+../data/gene/adenocarcinoma
+../data/gene/brain
+../data/gene/breast.2.class
+../data/gene/breast.3.class
+

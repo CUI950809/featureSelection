@@ -1,0 +1,13 @@
+.\data\gene\adenocarcinoma\
+.\data\gene\brain\
+.\data\gene\breast.2.class\
+.\data\gene\breast.3.class\
+.\data\gene\colon\
+.\data\gene\leukemia\
+.\data\gene\lymphoma\
+.\data\gene\MADELON\
+.\data\gene\multiple_feature\
+.\data\gene\nci\
+.\data\gene\optdigits\
+.\data\gene\prostate\
+.\data\gene\srbct\
