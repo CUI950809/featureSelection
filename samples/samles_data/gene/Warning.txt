@@ -1,0 +1,21 @@
+                                         ./samles_data\gene\adenocarcinoma 目录已存在
+./samles_data\gene\brain 创建成功
+D:\Python34\lib\site-packages\sklearn\cross_validation.py:516: Warning: The least populated class in y has only 4 members, which is too few. The minimum number of labels for any class cannot be less than n_folds=10.
+  % (min_labels, self.n_folds)), Warning)
+./samles_data\gene\breast.2.class 创建成功
+./samles_data\gene\breast.3.class 创建成功
+./samles_data\gene\colon 创建成功
+./samles_data\gene\leukemia 创建成功
+./samles_data\gene\lymphoma 创建成功
+D:\Python34\lib\site-packages\sklearn\cross_validation.py:516: Warning: The least populated class in y has only 9 members, which is too few. The minimum number of labels for any class cannot be less than n_folds=10.
+  % (min_labels, self.n_folds)), Warning)
+./samles_data\gene\MADELON 创建成功
+./samles_data\gene\multiple_feature 创建成功
+D:\Python34\lib\site-packages\sklearn\cross_validation.py:516: Warning: The least populated class in y has only 5 members, which is too few. The minimum number of labels for any class cannot be less than n_folds=10.
+  % (min_labels, self.n_folds)), Warning)
+./samles_data\gene\nci 创建成功
+./samles_data\gene\optdigits 创建成功
+./samles_data\gene\prostate 创建成功
+./samles_data\gene\srbct 创建成功
+D:\Python34\lib\site-packages\sklearn\cross_validation.py:516: Warning: The least populated class in y has only 8 members, which is too few. The minimum number of labels for any class cannot be less than n_folds=10.
+  % (min_labels, self.n_folds)), Warning)
