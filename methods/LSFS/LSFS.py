@@ -26,7 +26,7 @@ def timeit():
             elif fun.__name__ == get_W.__name__:
                 GetWTime.append(dual)
             else:
-                print('{0} : '.format(fun.__name__), dual)
+                print('{0} : dual {1}'.format(fun.__name__, dual))
             return result
         return __deco
     return _deco

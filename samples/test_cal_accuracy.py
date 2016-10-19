@@ -5,11 +5,19 @@ from samples.conf import create_path
 
 def test_cal_accracy():
     output_path = './result/'
-    idx_array = range(10, 16, 5)
     run_num = 50
     test_foldth = 3
 
-    dname_list = ['adenocarcinoma', 'brain', 'breast.2.class', 'breast.3.class']
+    # dname_list = ['adenocarcinoma', 'brain', 'breast.2.class', 'breast.3.class']
+    dname_list = {
+    'Glass Identification(214x9)':[1*i for i in range(1,10)],
+    'SPECTF Heart(188x44)':[5*i for i in range(1,9)],
+    'LibrasMovement(360x90)':[5*i for i in range(1,11)],
+    'Hill_Valley_without_noise_Testing(606x100)':[5*i for i in range(1,11)],
+    'Hill_Valley_with_noise_Testing(606x100)':[5*i for i in range(1,11)],
+    'Musk(476x166)':[10*i for i in range(1,11)],
+    'LSVT_feature_names(126x310)':[20*i for i in range(1,11)]
+    }
 
     frr = fea_rank_read(['lsfs', 'fisher', 'lsdf', 'sselect', 'prpc', 'laplacian'])
     rank_paths = [];
@@ -20,8 +28,6 @@ def test_cal_accracy():
 
     tt = get_traintest(test_foldth=test_foldth)
 
-    fn = 'lsdf_feature_rank_{0}.txt'.format(test_foldth)
-
     for x_train, y_train, x_test, y_test, path in tt:
         data_name = None
 
@@ -31,7 +37,8 @@ def test_cal_accracy():
                 break
 
         for idx, rp in enumerate(rank_paths):
-            if data_name in rp:
+            if data_name is not None and data_name in rp:
+                idx_array = dname_list[data_name]
                 tmp_list = []
                 for p in rank_paths[idx].split('/'):
                     tmp_list.extend(p.split('\\'))

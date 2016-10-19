@@ -1,0 +1,55 @@
+D:\Python34\python.exe H:/pythonSvn/myworkstation/featureSelection/samples/test_traintest.py
+['./samles_data/Glass Identification(214x9)', './samles_data/SPECTF Heart(188x44)', './samles_data/optdigits(5620x63)', './samles_data/LibrasMovement(360x90)', './samles_data/Hill_Valley_without_noise_Testing(606x100)', './samles_data/Hill_Valley_with_noise_Testing(606x100)', './samles_data/Musk(476x166)', './samles_data/LSVT_feature_names(126x310)', './samles_data/MADELON(2000x600)', './samles_data/isolet5(7797x617)', './samles_data/multiple_feature(2000x649)', './samles_data/CNAE-9(1080x856)', './samles_data/colon(62x2000)', './samles_data/srbct(63x2308)', './samles_data/leukemia(38x3051)', './samles_data/lymphoma(62x4026)', './samles_data/breast.2.class(77x4869)', './samles_data/breast.3.class(95x4869)', './samles_data/nci(61x5244)', './samles_data/brain(42x5597)', './samles_data/prostate(102x6033)', './samles_data/adenocarcinoma(76x9868)']
+./samles_data/Glass Identification(214x9) 创建成功
+D:\Python34\lib\site-packages\sklearn\cross_validation.py:516: Warning: The least populated class in y has only 9 members, which is too few. The minimum number of labels for any class cannot be less than n_folds=10.
+  % (min_labels, self.n_folds)), Warning)
+./samles_data/SPECTF Heart(188x44) 创建成功
+./samles_data/optdigits(5620x63) 创建成功
+./samles_data/LibrasMovement(360x90) 创建成功
+./samles_data/Hill_Valley_without_noise_Testing(606x100) 创建成功
+./samles_data/Hill_Valley_with_noise_Testing(606x100) 创建成功
+./samles_data/Musk(476x166) 创建成功
+./samles_data/LSVT_feature_names(126x310) 创建成功
+./samles_data/MADELON(2000x600) 创建成功
+./samles_data/isolet5(7797x617) 创建成功
+./samles_data/multiple_feature(2000x649) 创建成功
+./samles_data/CNAE-9(1080x856) 创建成功
+./samles_data/colon(62x2000) 创建成功
+D:\Python34\lib\site-packages\sklearn\cross_validation.py:516: Warning: The least populated class in y has only 8 members, which is too few. The minimum number of labels for any class cannot be less than n_folds=10.
+  % (min_labels, self.n_folds)), Warning)
+./samles_data/srbct(63x2308) 创建成功
+./samles_data/leukemia(38x3051) 创建成功
+./samles_data/lymphoma(62x4026) 创建成功
+./samles_data/breast.2.class(77x4869) 创建成功
+./samles_data/breast.3.class(95x4869) 创建成功
+D:\Python34\lib\site-packages\sklearn\cross_validation.py:516: Warning: The least populated class in y has only 5 members, which is too few. The minimum number of labels for any class cannot be less than n_folds=10.
+  % (min_labels, self.n_folds)), Warning)
+./samles_data/nci(61x5244) 创建成功
+./samles_data/brain(42x5597) 创建成功
+D:\Python34\lib\site-packages\sklearn\cross_validation.py:516: Warning: The least populated class in y has only 4 members, which is too few. The minimum number of labels for any class cannot be less than n_folds=10.
+  % (min_labels, self.n_folds)), Warning)
+./samles_data/prostate(102x6033) 创建成功
+./samles_data/adenocarcinoma(76x9868) 创建成功
+['./samles_data/Glass Identification(214x9)', './samles_data/SPECTF Heart(188x44)', './samles_data/optdigits(5620x63)', './samles_data/LibrasMovement(360x90)', './samles_data/Hill_Valley_without_noise_Testing(606x100)', './samles_data/Hill_Valley_with_noise_Testing(606x100)', './samles_data/Musk(476x166)', './samles_data/LSVT_feature_names(126x310)', './samles_data/MADELON(2000x600)', './samles_data/isolet5(7797x617)', './samles_data/multiple_feature(2000x649)', './samles_data/CNAE-9(1080x856)', './samles_data/colon(62x2000)', './samles_data/srbct(63x2308)', './samles_data/leukemia(38x3051)', './samles_data/lymphoma(62x4026)', './samles_data/breast.2.class(77x4869)', './samles_data/breast.3.class(95x4869)', './samles_data/nci(61x5244)', './samles_data/brain(42x5597)', './samles_data/prostate(102x6033)', './samles_data/adenocarcinoma(76x9868)']
+read:  ./samles_data/Glass Identification(214x9)/test_10.flag
+read:  ./samles_data/SPECTF Heart(188x44)/test_10.flag
+read:  ./samles_data/optdigits(5620x63)/test_10.flag
+read:  ./samles_data/LibrasMovement(360x90)/test_10.flag
+read:  ./samles_data/Hill_Valley_without_noise_Testing(606x100)/test_10.flag
+read:  ./samles_data/Hill_Valley_with_noise_Testing(606x100)/test_10.flag
+read:  ./samles_data/Musk(476x166)/test_10.flag
+read:  ./samles_data/LSVT_feature_names(126x310)/test_10.flag
+read:  ./samles_data/MADELON(2000x600)/test_10.flag
+read:  ./samles_data/isolet5(7797x617)/test_10.flag
+read:  ./samles_data/multiple_feature(2000x649)/test_10.flag
+read:  ./samles_data/CNAE-9(1080x856)/test_10.flag
+read:  ./samles_data/colon(62x2000)/test_10.flag
+read:  ./samles_data/srbct(63x2308)/test_10.flag
+read:  ./samles_data/leukemia(38x3051)/test_10.flag
+read:  ./samles_data/lymphoma(62x4026)/test_10.flag
+read:  ./samles_data/breast.2.class(77x4869)/test_10.flag
+read:  ./samles_data/breast.3.class(95x4869)/test_10.flag
+read:  ./samles_data/nci(61x5244)/test_10.flag
+read:  ./samles_data/brain(42x5597)/test_10.flag
+read:  ./samles_data/prostate(102x6033)/test_10.flag
+read:  ./samles_data/adenocarcinoma(76x9868)/test_10.flag

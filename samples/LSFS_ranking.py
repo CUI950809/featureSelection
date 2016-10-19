@@ -20,7 +20,7 @@ def LSFS_ranking():
         feature_order_list = []
         exc_fun_label = []
 
-        num_fea = 20
+        num_fea = x_train.shape[1]
         fidx = range(num_fea)
 
         for gamma in gamma_list:

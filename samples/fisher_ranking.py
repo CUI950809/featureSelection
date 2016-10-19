@@ -14,8 +14,8 @@ def main():
         feature_order_list = []
         exc_fun_label = []
 
-        num_fea = 20
-        fidx = range(num_fea)
+        num_fea = x_train.shape[1]
+        fea_idxs = range(num_fea)
 
         fc = fisher_score.fisher_score(x_train[:,:num_fea], y_train)
         rf = fisher_score.feature_ranking(fc)
@@ -25,7 +25,7 @@ def main():
 
         fn = fn.format(test_foldth)
         new_path = output_path + path.split('data')[-1].strip()
-        fea_rank_write(new_path, fn, feature_order_list, exc_fun_label, fidx)
+        fea_rank_write(new_path, fn, feature_order_list, exc_fun_label, fea_idxs)
 
 
     fr = fea_rank_read(['fisher'])

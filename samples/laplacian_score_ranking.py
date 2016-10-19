@@ -10,14 +10,14 @@ def main():
     fn = 'laplacian_score_feature_rank_{0}.txt'.format(test_foldth)
 
     k = 10
-    t_list = range(20, 101, 20)
+    t_list = [10**i for i in range(-3,4)]
 
     tt = get_traintest(test_foldth=test_foldth)
     for x_train, y_train, x_test, y_test, path in tt:
         feature_order_list = []
         exc_fun_label = []
 
-        num_fea = 20
+        num_fea = x_train.shape[1]
         fidx = range(num_fea)
 
 

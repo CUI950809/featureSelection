@@ -42,7 +42,7 @@ def cal_baseline():
 
         new_path = output_path + path.split('data')[-1].strip()
         create_path(new_path)
-        with open(new_path + fn, 'w+') as f:
+        with open(new_path + '/' + fn, 'w+') as f:
             print(avg_accuracy, file=f)
 
     print('{0} finish!'.format(__file__))

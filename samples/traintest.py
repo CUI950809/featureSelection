@@ -4,12 +4,18 @@ from samples.conf import create_path
 from samples.conf import *
 
 
-def traintest(op = "r", get_paths=False):
+def traintest(op = "r", get_paths=False, n_folds = 10):
+    """
+    从指定的路径读取data.txt和row.label，
+    然后划分成k折，输出到'./samles_data'文件夹中
+
+    返回训练和测试数据，以及数据的路径
+    """
     paths = None
     data_file_paths = 'data_selected_file_path.txt'
     fdname = 'data.txt'
     lname = 'row.label'
-    n_folds = 10
+
     output_path = './samles_data'
 
     # read data file paths

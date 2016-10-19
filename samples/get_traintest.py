@@ -19,8 +19,8 @@ def get_traintest(test_foldth = 3):
 
     for x, y in rd:
         fileidx += 1
-        train_flag = tt[fileidx] > test_foldth
-        test_flag = tt[fileidx] <= test_foldth
+        train_flag = tt[fileidx] <= test_foldth
+        test_flag = tt[fileidx] > test_foldth
         x_train, y_train, x_test, y_test = (
             x[train_flag],
             y[train_flag],

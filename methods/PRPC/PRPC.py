@@ -32,6 +32,7 @@ def PRPC(XL, YL, XU, num = 100):
     Fa = F - Fs
 
     ln = XL.shape[0]
+    fn = XL.shape[1]
     X = sp.concatenate((XL, XU), axis = 0)
 
     # YL, 坐标当作 -1
@@ -41,6 +42,10 @@ def PRPC(XL, YL, XU, num = 100):
     a = 0
 
     for k in range(1, num + 1):
+
+        if k > fn:
+            print('have not enough feature for select');
+            break
 
         max_pearson = float("-inf")
         Fk = -1
