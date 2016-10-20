@@ -21,7 +21,6 @@ file_path_all = './data_selected_file_path_all.txt'
 
 # 进行特征选择
 execpath_list = {
-    100:'./test_cal_accuracy.py',
     0:'./cal_baseline.py',
     1:'./fisher_ranking.py',
     2:'./laplacian_score_ranking.py',
@@ -31,11 +30,17 @@ execpath_list = {
     6:'./SSelect_ranking.py'
 }
 
+evaluate_list = {100:'./test_cal_accuracy.py'}
+
 # 小数据特征选择
 moveFileto(file_path1_small,  target_file_path)
-execfile(execpath_list[100])
+for key in execpath_list.keys():
+    execfile(execpath_list[key])
+    print('{0} finished!'.format(key))
 
-# execfile(execpath_list[6])
-# for key in execpath_list.keys():
-#     execfile(execpath_list[key])
-#     print('{0} finished!'.format(key))
+for key in evaluate_list:
+    execfile(evaluate_list[key])
+    print('{0} finished!'.format(key))
+
+# execfile('constate_acc_table.py')
+
