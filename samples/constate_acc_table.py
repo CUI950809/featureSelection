@@ -2,6 +2,7 @@ from samples.conf import pd
 from samples.conf import get_filepath_in_folders
 from samples.conf import *
 
+
 def constate_acc_table(in_path_list, out_path_list, fn):
     for fpidx, folder_path in enumerate(path_list):
         acc_path_list = get_filepath_in_folders(folder_path)
@@ -40,6 +41,8 @@ def constate_acc_table(in_path_list, out_path_list, fn):
         create_path(out_path_list[fpidx])
         acc_table.to_csv(out_path_list[fpidx] + '/' + fn + '.csv', header = True, index = True)
         max_acc_table.to_csv(out_path_list[fpidx] + '/' + 'max_' + fn + '.csv', header=True, index=True)
+
+        plot_acc_arr(max_acc_table, picture_path=out_path_list[fpidx] + '/' + 'max_' + fn + '.png')
 
 
 if __name__ == '__main__':

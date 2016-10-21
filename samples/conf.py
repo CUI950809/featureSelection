@@ -33,7 +33,7 @@ from utility.fea_io import fea_rank_read
 from utility.fea_io import fea_rank_write
 
 from utility.cal_accuracy import cal_acc_tabel
-
+from utility.my_plot import plot_acc_arr
 
 from samples.traintest import traintest
 from samples.get_traintest import get_traintest

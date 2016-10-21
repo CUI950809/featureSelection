@@ -3,70 +3,21 @@
 
 from methods.LSFS.conf import *
 
-GetWTime = []
-CWTime = []
+import utility.wrapper
+from utility.wrapper import timeit
+from utility.wrapper import get_object_value
+from utility.wrapper import reset_lsfs_global_value
 
-WObejectV = []
-LSFSObejectV = []
 
 LSFS_NITER = 6
 W_NITER = 10
 
 
-def timeit():
-    def _deco(fun):
-        def __deco(*args, **kwargs):
-            __deco.__name__ = fun.__name__
-            import time
-            s = time.clock()
-            result = fun(*args, **kwargs)
-            dual = time.clock() - s
-            if fun.__name__ == compute_W.__name__:
-                CWTime.append(dual)
-            elif fun.__name__ == get_W.__name__:
-                GetWTime.append(dual)
-            else:
-                print('{0} : dual {1}'.format(fun.__name__, dual))
-            return result
-        return __deco
-    return _deco
-
-
-def get_object_value():
-    def _deco(fun):
-        def __deco(*args, **kwargs):
-            __deco.__name__ = fun.__name__
-            result = fun(*args, **kwargs)
-            if fun.__name__ == fun17_value.__name__:
-                WObejectV.append(result)
-            elif fun.__name__ == fun8_value.__name__:
-                LSFSObejectV.append(result)
-            else:
-                print('{0} : '.format(fun.__name__), __deco.__name__)
-            return result
-        return __deco
-    return _deco
-
-
-def reset_global_value():
-    def _deco(fun):
-        def __deco(*args, **kwargs):
-            __deco.__name__ = fun.__name__
-            global GetWTime, CWTime, WObejectV, LSFSObejectV
-            GetWTime = []
-            CWTime = []
-            WObejectV = []
-            LSFSObejectV = []
-            result = fun(*args, **kwargs)
-            return result
-        return __deco
-    return _deco
-
-
 def value_variation(cur_f, pre_f):
-    if cur_f == 0:
-        cur_f = np.max(cur_f, 10**-8)
-    return abs((cur_f - pre_f) / (cur_f))
+    b = 10**-8
+    if cur_f != 0:
+        b = cur_f
+    return abs((cur_f - pre_f) / b)
 
 
 def norm_2_1_nz(a):
@@ -112,7 +63,7 @@ def fun22_value(W, X, H, Q, Y, gama):
     return np.linalg.norm(np.dot(np.dot(H, X.T), W) - np.dot(H, Y), ord = "fro")**2 + gama*np.trace(np.dot(np.dot(W.T, Q),W))
 
 
-@get_object_value()
+@get_object_value(utility.wrapper.LSFSWObejectV)
 def fun17_value(W, X, Y, gama):
     """
     $
@@ -127,7 +78,7 @@ def fun17_value(W, X, Y, gama):
     return np.linalg.norm(np.dot(X.T, W) + np.dot(np.ones((X.shape[1],1)), b.T) - Y, ord = "fro")**2 + gama*(norm_2_1(W)**2)
 
 
-@get_object_value()
+@get_object_value(utility.wrapper.LSFSObejectV)
 def fun8_value(X, Y, W, b, gama):
     """
     X : d x n
@@ -140,7 +91,7 @@ def fun8_value(X, Y, W, b, gama):
     return np.linalg.norm( np.dot(X.T,W) + np.dot(np.ones((n, 1)),b.T) - Y , ord=2)**2 + gama*(np.linalg.norm( W , ord = "fro")**2)
 
 
-@timeit()
+@timeit(utility.wrapper.LSFSCWTime)
 def compute_W(X, Y, H, Q, gama):
     """
      W = (X*H*X.T + gama * Q)^-1 * X*H*Y
@@ -181,7 +132,7 @@ def compute_H(n):
     return H
 
 
-@timeit()
+@timeit(utility.wrapper.LSFSGetWTime)
 def get_W(X, Y, gama):
     """
     compute W
@@ -393,7 +344,9 @@ def compute_thea(W):
     return s
 
 
-@reset_global_value()
+@get_object_value(utility.wrapper.LSFSresult)
+@reset_lsfs_global_value
+@timeit(utility.wrapper.LSFSTime)
 def LSFS(XL, YL, XU, gama = 10**-1):
     """
     Input
@@ -460,17 +413,3 @@ def feature_ranking(score):
     feature_order = np.argsort(score)
     return feature_order[::-1]
 
-
-# def compute_acc_diff_gama_fearture(XL_train, YL_train, XU_train, YU_train, gama_array, idx_array\
-#                                    , output_file_name="feature_order"):
-#     XL, YL, XU, YU = XL_train.copy(), YL_train.copy(), XU_train.copy(), YU_train.copy()
-#     YL = read_data.label_n1_to_nc(YL)
-#     YU = read_data.label_n1_to_nc(YU)
-#     data = []
-#     for gama in gama_array:
-#         print("gama : ", gama)
-#         feature_order, time_dual = lsfs( XL, YL, XU, output_file_name=output_file_name, gama = gama )
-#         acc_array = evaluate.cal_many_acc_by_idx2(XL_train, YL_train, XU_train, YU_train,\
-#                                feature_order, idx_array)
-#         data.append(acc_array)
-#     return np.array(data)

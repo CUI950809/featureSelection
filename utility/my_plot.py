@@ -117,3 +117,43 @@ def plot_array_like(array_1d, xlabel_name="number feature", ylabel_name="accurac
     plt.xlim(0, len(array_1d))
 
     plt.show()
+
+
+
+def plot_acc_arr(table, xlabel = "Numbers of Selected Features",
+                 ylabel = "Accuracy", picture_path=None):
+    """
+    plot scatter picture according to acc_array_table(pd.DataFrame)
+
+    x ticks is table.columns
+    y ticks is table.index
+
+    Input
+    -----
+    table: {pandas DataFrame}, shape {r, m}
+    x_label: {str}, default "Numbers of Selected Features"
+    y_label: {str}, default "Accuracy"
+    picture_path: {str}, the path to save the picture
+    """
+
+    style = ['.--','o--','v--','s--','p--','*--','h--', 'H--','+--','x--','D--']
+
+    labels = table.index.get_values()
+    x = table.columns.get_values()
+
+    plt.figure(figsize=(10, 8))
+    # plt.xlim(min( table.columns.get_values()), max( table.columns.get_values()) + 1 )
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+
+    for i,label in enumerate(labels):
+        row_data = table.ix[label, :].get_values()
+#         print(label, row_data, x, style[i])
+        plt.plot(x, row_data, style[i], label = label)
+
+    plt.legend(loc='best')
+    if picture_path != None:
+        plt.savefig(picture_path)
+    else:
+        plt.show()
+    plt.close()

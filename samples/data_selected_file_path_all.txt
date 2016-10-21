@@ -1,5 +1,5 @@
 ../data/Glass Identification(214x9)/
-../data/SPECTF Heart(188x44)/
+../data/SPECTF Heart(187x44)/
 ../data/optdigits(5620x63)/
 ../data/LibrasMovement(360x90)/
 ../data/Hill_Valley_without_noise_Testing(606x100)/
