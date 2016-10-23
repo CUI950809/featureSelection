@@ -7,6 +7,27 @@ from samples.conf import fea_rank_write
 from samples.conf import *
 
 
+from utility.wrapper import LSFSTime, LSFSFW
+
+LSFSTime = LSFSTime
+LSFSFW = LSFSFW
+
+
+def save_LSFS_time(fn):
+    fun_name = 'LSFS'
+    mean_t = np.mean(LSFSTime)
+    save_value = {'mean_t': mean_t}
+    save_time(fn, fun_name, save_value)
+
+
+def save_lsfs_fw(output_path):
+    name = 'LSFSFW'
+    if len(LSFSFW) > 1:
+        print("too many result")
+    elif len(LSFSFW) == 1:
+        save_objectv(LSFSFW[0], name, output_path, sort_flag=True, reverse_flag=True)
+
+
 def LSFS_ranking():
     # new_paths = ['./ranking_result/' + p.split('data')[-1].strip() for p in paths]
     output_path = './ranking_result/'
@@ -30,6 +51,15 @@ def LSFS_ranking():
 
             exc_fun_label.append("{0}_gama({1})".format(LSFS.LSFS.__name__, gamma))
             feature_order_list.append(rf)
+
+            # -------------------------save time--------------------------#
+            fn = path.strip('/| |\n').split('/')[-1]
+            save_LSFS_time(fn)
+
+            # -------------------------save feature weight result--------------------------#
+            fw_path = './fw_result/LSFS/'
+            output_path = fw_path + path.split('data')[-1].strip()
+            save_lsfs_fw(output_path + '/' + str(gamma) + '/')
 
         fn = fn.format(test_foldth)
         new_path = output_path + path.split('data')[-1].strip()

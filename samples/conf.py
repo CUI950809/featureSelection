@@ -34,6 +34,9 @@ from utility.fea_io import fea_rank_write
 
 from utility.cal_accuracy import cal_acc_tabel
 from utility.my_plot import plot_acc_arr
+from utility.my_exam import save_time
+from utility.my_exam import save_objectv
+from utility.my_exam import compute_variation
 
 from samples.traintest import traintest
 from samples.get_traintest import get_traintest

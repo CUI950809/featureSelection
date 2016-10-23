@@ -3,6 +3,11 @@
 
 from methods.LaplacianScore.conf import *
 
+from .conf import timeit
+from .conf import reset_LaplacianScore_global_value
+import utility.wrapper
+
+
 def compute_S(x_train, k = 10, t = 100):
     """
     compute rbf distance for knn node.
@@ -89,6 +94,8 @@ def compute_laplacian_score(x_train, L, D):
     return feature_laplacian_score
 
 
+@reset_LaplacianScore_global_value
+@timeit(utility.wrapper.LaplacianScoreTime)
 def laplacian_score(x_train, k= 10, t = 100):
     """
     compute laplacian score for each feature.

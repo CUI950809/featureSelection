@@ -1,3 +1,7 @@
+from .conf import save_time
+from .conf import timeit
+from .conf import reset_lsdf_global_value
+import utility.wrapper
 from .conf import *
 
 
@@ -153,6 +157,8 @@ def compute_Lr(x_labeled, x_unlabeled, Lw, Lb):
     return Lr
 
 
+@reset_lsdf_global_value
+@timeit(utility.wrapper.LSDFTime)
 def lsdf(x_labeled, y_labeled, x_unlabeled):
     """
     lsdf 算法，返回每个特征的得分。

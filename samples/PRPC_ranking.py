@@ -3,6 +3,20 @@ from samples.conf import *
 from samples.traintest import traintest
 from samples.get_traintest import get_traintest
 
+
+from utility.wrapper import PRPCTime
+
+PRPCTime = PRPCTime
+
+def save_PRPC_time(fn):
+    fun_name = 'PRPC'
+    mean_t = np.mean(PRPCTime)
+
+    save_value = {'mean_t': mean_t}
+
+    save_time(fn, fun_name, save_value)
+
+
 def main():
 
     # new_paths = ['./ranking_result/' + p.split('data')[-1].strip() for p in paths]
@@ -38,6 +52,10 @@ def main():
         fn = fn.format(test_foldth, num_fea)
         new_path = output_path + path.split('data')[-1].strip()
         fea_rank_write(new_path, fn, feature_order_list, exc_fun_label, fidx)
+
+        # -------------------------save time--------------------------#
+        fn = path.strip('/| |\n').split('/')[-1]
+        save_PRPC_time(fn)
 
     fr = fea_rank_read(['PRPC'])
     for feature_rank_table, path in fr:

@@ -4,6 +4,17 @@ from samples.get_traintest import get_traintest
 from samples.conf import *
 
 
+from utility.wrapper import FisherScoreTime
+
+FisherScoreTime = FisherScoreTime
+
+def save_FisherScore_time(fn):
+    fun_name = 'FisherScore'
+    mean_t = np.mean(FisherScoreTime)
+    save_value = {'mean_t': mean_t}
+    save_time(fn, fun_name, save_value)
+
+
 def main():
     # new_paths = ['./ranking_result/' + p.split('data')[-1].strip() for p in paths]
     output_path = './ranking_result/'
@@ -26,6 +37,10 @@ def main():
         fn = fn.format(test_foldth)
         new_path = output_path + path.split('data')[-1].strip()
         fea_rank_write(new_path, fn, feature_order_list, exc_fun_label, fea_idxs)
+
+        # -------------------------save time--------------------------#
+        fn = path.strip('/| |\n').split('/')[-1]
+        save_FisherScore_time(fn)
 
 
     fr = fea_rank_read(['fisher'])

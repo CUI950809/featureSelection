@@ -3,6 +3,20 @@ from samples.conf import *
 from samples.traintest import traintest
 from samples.get_traintest import get_traintest
 
+
+from utility.wrapper import SSelectTime
+
+SSelectTime = SSelectTime
+
+def save_SSelect_time(fn):
+    fun_name = 'SSelect'
+    mean_t = np.mean(SSelectTime)
+
+    save_value = {'mean_t': mean_t}
+
+    save_time(fn, fun_name, save_value)
+
+
 def main():
 
     # new_paths = ['./ranking_result/' + p.split('data')[-1].strip() for p in paths]
@@ -27,9 +41,14 @@ def main():
                 exc_fun_label.append("{0}_theta({1})_namuda({2})".format(SSelect.SSelect.__name__, theta, namuda))
                 feature_order_list.append(rf)
 
+                # -------------------------save time--------------------------#
+                fn = path.strip('/| |\n').split('/')[-1]
+                save_SSelect_time(fn)
+
         fn = fn.format(test_foldth)
         new_path = output_path + path.split('data')[-1].strip()
         fea_rank_write(new_path, fn, feature_order_list, exc_fun_label, fidx)
+
 
     fr = fea_rank_read(['sselect'])
     for feature_rank_table, path in fr:

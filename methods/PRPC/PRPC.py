@@ -5,6 +5,13 @@ from methods.PRPC.conf import stats
 from methods.PRPC.conf import np
 from methods.PRPC.conf import *
 
+from .conf import timeit
+from .conf import reset_PRPC_global_value
+import utility.wrapper
+
+
+@reset_PRPC_global_value
+@timeit(utility.wrapper.PRPCTime)
 def PRPC(XL, YL, XU, num = 100):
     """
     order the feature by correlation coefficient.

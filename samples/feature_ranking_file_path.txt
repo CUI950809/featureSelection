@@ -82,3 +82,52 @@
 ./ranking_result//Hill_Valley_with_noise_Testing(606x100)/n100/
 ./ranking_result//Musk(476x166)/n166/
 ./ranking_result//LSVT_feature_names(126x310)/n310/
+./ranking_result//Glass Identification(214x9)/n9/
+./ranking_result//SPECTF Heart(187x44)/n44/
+./ranking_result//LibrasMovement(360x90)/n90/
+./ranking_result//Hill_Valley_without_noise_Testing(606x100)/n100/
+./ranking_result//Hill_Valley_with_noise_Testing(606x100)/n100/
+./ranking_result//Musk(476x166)/n166/
+./ranking_result//LSVT_feature_names(126x310)/n310/
+./ranking_result//Glass Identification(214x9)/n9/
+./ranking_result//SPECTF Heart(187x44)/n44/
+./ranking_result//LibrasMovement(360x90)/n90/
+./ranking_result//Hill_Valley_without_noise_Testing(606x100)/n100/
+./ranking_result//Hill_Valley_with_noise_Testing(606x100)/n100/
+./ranking_result//Musk(476x166)/n166/
+./ranking_result//LSVT_feature_names(126x310)/n310/
+./ranking_result//Glass Identification(214x9)/n9/
+./ranking_result//SPECTF Heart(187x44)/n44/
+./ranking_result//LibrasMovement(360x90)/n90/
+./ranking_result//Hill_Valley_without_noise_Testing(606x100)/n100/
+./ranking_result//Hill_Valley_with_noise_Testing(606x100)/n100/
+./ranking_result//Glass Identification(214x9)/n9/
+./ranking_result//SPECTF Heart(187x44)/n44/
+./ranking_result//LibrasMovement(360x90)/n90/
+./ranking_result//Hill_Valley_without_noise_Testing(606x100)/n100/
+./ranking_result//Hill_Valley_with_noise_Testing(606x100)/n100/
+./ranking_result//Musk(476x166)/n166/
+./ranking_result//LSVT_feature_names(126x310)/n310/
+./ranking_result//Glass Identification(214x9)/n9/
+./ranking_result//SPECTF Heart(187x44)/n44/
+./ranking_result//LibrasMovement(360x90)/n90/
+./ranking_result//Hill_Valley_without_noise_Testing(606x100)/n100/
+./ranking_result//Hill_Valley_with_noise_Testing(606x100)/n100/
+./ranking_result//Musk(476x166)/n166/
+./ranking_result//LSVT_feature_names(126x310)/n310/
+./ranking_result//Glass Identification(214x9)/n9/
+./ranking_result//SPECTF Heart(187x44)/n44/
+./ranking_result//LibrasMovement(360x90)/n90/
+./ranking_result//Hill_Valley_without_noise_Testing(606x100)/n100/
+./ranking_result//Hill_Valley_with_noise_Testing(606x100)/n100/
+./ranking_result//Musk(476x166)/n166/
+./ranking_result//LSVT_feature_names(126x310)/n310/
+./ranking_result//Glass Identification(214x9)/n9/
+./ranking_result//SPECTF Heart(187x44)/n44/
+./ranking_result//LibrasMovement(360x90)/n90/
+./ranking_result//Hill_Valley_without_noise_Testing(606x100)/n100/
+./ranking_result//Hill_Valley_with_noise_Testing(606x100)/n100/
+./ranking_result//Musk(476x166)/n166/
+./ranking_result//LSVT_feature_names(126x310)/n310/
+./fw_result/LSFS//Glass Identification(214x9)/Glass Identification(214x9)/n9/
+./fw_result/LSFS//SPECTF Heart(187x44)/SPECTF Heart(187x44)/n44/

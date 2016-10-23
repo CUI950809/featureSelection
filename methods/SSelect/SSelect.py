@@ -4,6 +4,11 @@ from methods.SSelect.conf import pairwise_distances
 from methods.SSelect.conf import get_knn_flag
 from methods.SSelect.conf import *
 
+from .conf import timeit
+from .conf import reset_SSelect_global_value
+import utility.wrapper
+
+
 def compute_W_by_distM(square_distance, theta = 1):
     """
     change square distance matrix to guassion similarity matrix
@@ -157,6 +162,8 @@ def compute_second_term(S, YL, g_index, namuda = 0.1):
     return (1.0-namuda) * ( 1.0 - nmi_value)
 
 
+@reset_SSelect_global_value
+@timeit(utility.wrapper.SSelectTime)
 def SSelect(XL, YL, XU, k = 10, theta = 1, namuda = 0.1):
     """
     compute Lr score for each feature.

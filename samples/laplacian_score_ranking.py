@@ -3,6 +3,21 @@ from samples.conf import *
 from samples.traintest import traintest
 from samples.get_traintest import get_traintest
 
+
+from utility.wrapper import LaplacianScoreTime
+
+LaplacianScoreTime = LaplacianScoreTime
+
+def save_LaplacianScore_time(fn):
+    fun_name = 'LaplacianScore'
+    mean_t = np.mean(LaplacianScoreTime)
+
+    save_value = {'mean_t': mean_t}
+
+    save_time(fn, fun_name, save_value)
+
+
+
 def main():
     # new_paths = ['./ranking_result/' + p.split('data')[-1].strip() for p in paths]
     output_path = './ranking_result/'
@@ -26,6 +41,10 @@ def main():
             lap_score_ranking = laplacian_score.feature_ranking(lap_score)
             exc_fun_label.append("{0}_t({1})".format(laplacian_score.laplacian_score.__name__, t))
             feature_order_list.append(lap_score_ranking)
+
+            # -------------------------save time--------------------------#
+            fn = path.strip('/| |\n').split('/')[-1]
+            save_LaplacianScore_time(fn)
 
         fn = fn.format(test_foldth)
         new_path = output_path + path.split('data')[-1].strip()

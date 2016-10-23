@@ -1,6 +1,12 @@
 from .conf import *
 
+from .conf import timeit
+from .conf import reset_FisherScore_global_value
+import utility.wrapper
 
+
+@reset_FisherScore_global_value
+@timeit(utility.wrapper.FisherScoreTime)
 def fisher_score(X, y):
     """
     compute fisher scores of each feature.
