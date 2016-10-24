@@ -2,9 +2,11 @@ from utility.conf import np
 from utility.conf import pd
 from utility.path_search import create_path
 from utility.path_search import get_filepath_in_folders
+from utility.my_plot import plot_acc_arr
 
 
 feature_ranking_file_path = 'feature_ranking_file_path.txt'
+feature_weight_file_path = 'feature_weight_file_path.txt'
 
 
 def fea_rank_write(path, fn, \
@@ -103,3 +105,63 @@ def fea_rank_read(select = None):
             feature_order_table = pd.read_csv(file_path, index_col='index name')
             # print(feature_order_table.values)
             yield feature_order_table, file_path
+
+
+"""
+写到这了
+"""
+def fea_weight_write(path, fn, \
+                  feature_weight_list, exc_fun_label, fidx, \
+                     sort_flag = False, reverse_flag = False):
+    """
+    write features ranking to specify file.(path + fn).
+    also the path (path) will write to file in feature_weight_file_path.
+
+    Input
+    ----
+    path: {str} the path where to write feature ranking.
+    fn: {str} file name.
+    feature_weight_list: {list}, len is m, each element is numpy array shape {n_features,}.
+    exc_fun_label: {numpy array}, shape {m,}. the index for feature ranking
+    fidx: {numpy array}, shape {n_features,}
+
+    Output
+    ------
+    None
+    """
+    num_fea = 0
+
+    if len(feature_weight_list) > 0:
+        num_fea = len(feature_weight_list[0])
+
+    # new_path = path + "/n{0}/".format(num_fea)
+    new_path = path + "/"
+
+    create_path(new_path)
+
+    with open(feature_weight_file_path, "a+") as f:
+        if new_path.strip('/') not in f.readlines():
+            print(new_path, file=f)
+
+    feature_weight_table_path = new_path + fn + '.csv'
+    feature_weight_table = pd.DataFrame(data=np.array(feature_weight_list), index=exc_fun_label, columns=fidx)
+    feature_weight_table.index.name = 'index name'
+    print('write : ', feature_weight_table_path)
+    if feature_weight_table_path != None:
+        feature_weight_table.to_csv(feature_weight_table_path, header=True, index=True)
+
+    plot_table = feature_weight_table
+    if sort_flag == True:
+        arr = plot_table.values
+        new_arr = np.sort(arr, axis=1)
+        if reverse_flag == True:
+            for i in range(len(arr)):
+                new_arr[i, :] = new_arr[i,::-1]
+        plot_table = pd.DataFrame(np.array(new_arr),
+                             index=feature_weight_table.index, columns=feature_weight_table.columns)
+        plot_table.index.name = feature_weight_table.index.name
+
+    plot_acc_arr(plot_table, picture_path=new_path + '/' + fn + '.png')
+
+
+

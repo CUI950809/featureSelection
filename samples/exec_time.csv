@@ -1,0 +1,65 @@
+data name,fun name,which,time
+SPECTF Heart(187x44),LSFS,sum_getw_time,0.8072621529670408
+SPECTF Heart(187x44),LSFS,mean_w_time,0.0012202827887418232
+SPECTF Heart(187x44),LSFS,mean_t,0.5715511983182571
+SPECTF Heart(187x44),LSFS,mean_getw_time,0.07338727130487753
+SPECTF Heart(187x44),LSFS,sum_w_time,0.5851434022464732
+LibrasMovement(360x90),LSFS,sum_w_time,2.285639819688029
+LibrasMovement(360x90),LSFS,mean_t,0.7325104053451372
+LibrasMovement(360x90),LSFS,sum_getw_time,2.6413746423509465
+LibrasMovement(360x90),LSFS,mean_getw_time,0.3812326295302284
+LibrasMovement(360x90),LSFS,mean_w_time,0.006464533530468929
+Hill_Valley_without_noise_Testing(606x100),LSFS,mean_w_time,0.0208392781002958
+Hill_Valley_without_noise_Testing(606x100),LSFS,sum_w_time,11.668362433393279
+Hill_Valley_without_noise_Testing(606x100),LSFS,sum_getw_time,12.320561412874202
+Hill_Valley_without_noise_Testing(606x100),LSFS,mean_t,2.16899877368462
+Hill_Valley_without_noise_Testing(606x100),LSFS,mean_getw_time,1.120020831600432
+Glass Identification(214x9),LSFS,mean_w_time,
+Glass Identification(214x9),LSFS,mean_t,0.3162531866275887
+Glass Identification(214x9),LSFS,sum_getw_time,0.2551928531988226
+Glass Identification(214x9),LSFS,sum_w_time,0.1402432305917467
+Glass Identification(214x9),LSFS,mean_getw_time,
+Hill_Valley_with_noise_Testing(606x100),LSFS,mean_w_time,0.0148190725225223
+Hill_Valley_with_noise_Testing(606x100),LSFS,mean_t,1.0507074054607617
+Hill_Valley_with_noise_Testing(606x100),LSFS,sum_getw_time,0.8110946808785082
+Hill_Valley_with_noise_Testing(606x100),LSFS,sum_w_time,0.6889094353727827
+Hill_Valley_with_noise_Testing(606x100),LSFS,mean_getw_time,0.07305916294784501
+Musk(476x166),LSFS,mean_w_time,0.025526429322971732
+Musk(476x166),LSFS,mean_t,2.21631943802085
+Musk(476x166),LSFS,sum_getw_time,13.192236565751932
+Musk(476x166),LSFS,sum_w_time,12.618877000297672
+Musk(476x166),LSFS,mean_getw_time,1.1983833516798126
+LSVT_feature_names(126x310),LSFS,mean_w_time,0.024180302445488987
+LSVT_feature_names(126x310),LSFS,mean_t,1.897509362797416
+LSVT_feature_names(126x310),LSFS,sum_getw_time,14.13805195125017
+LSVT_feature_names(126x310),LSFS,sum_w_time,13.579520000503695
+LSVT_feature_names(126x310),LSFS,mean_getw_time,1.2838565102061614
+Glass Identification(214x9),LSDF,mean_t,1.1899710267435306
+SPECTF Heart(187x44),LSDF,mean_t,0.375569394419
+LibrasMovement(360x90),LSDF,mean_t,0.633761670364
+Hill_Valley_without_noise_Testing(606x100),LSDF,mean_t,1.29862153667
+Hill_Valley_with_noise_Testing(606x100),LSDF,mean_t,1.70862400554
+Musk(476x166),LSDF,mean_t,1.7800561473700005
+LSVT_feature_names(126x310),LSDF,mean_t,1.55137303442
+Glass Identification(214x9),SSelect,mean_t,1.240657739442432
+Glass Identification(214x9),PRPC,mean_t,0.008622523073695963
+SPECTF Heart(187x44),PRPC,mean_t,0.10465596289716564
+LibrasMovement(360x90),PRPC,mean_t,0.3864997146256567
+Hill_Valley_without_noise_Testing(606x100),PRPC,mean_t,0.6157579068068146
+Hill_Valley_with_noise_Testing(606x100),PRPC,mean_t,0.7470700526902265
+Musk(476x166),PRPC,mean_t,1.21417535761
+LSVT_feature_names(126x310),PRPC,mean_t,3.4095416425300002
+Glass Identification(214x9),LaplacianScore,mean_t,2.9037693327480487e-05
+SPECTF Heart(187x44),LaplacianScore,mean_t,3.1072846626900425e-05
+LibrasMovement(360x90),LaplacianScore,mean_t,3.761742783056357e-05
+Hill_Valley_without_noise_Testing(606x100),LaplacianScore,mean_t,4.09589829085448e-05
+Hill_Valley_with_noise_Testing(606x100),LaplacianScore,mean_t,4.374611736619181e-05
+Musk(476x166),LaplacianScore,mean_t,4.533239318336479e-05
+LSVT_feature_names(126x310),LaplacianScore,mean_t,4.773299217561726e-05
+Glass Identification(214x9),FisherScore,mean_t,0.012118286933148946
+SPECTF Heart(187x44),FisherScore,mean_t,0.013949129822206023
+LibrasMovement(360x90),FisherScore,mean_t,0.08437538190076857
+Hill_Valley_without_noise_Testing(606x100),FisherScore,mean_t,0.07259896444195155
+Hill_Valley_with_noise_Testing(606x100),FisherScore,mean_t,0.06607734926335858
+Musk(476x166),FisherScore,mean_t,0.06538511465623856
+LSVT_feature_names(126x310),FisherScore,mean_t,0.07237449741826653

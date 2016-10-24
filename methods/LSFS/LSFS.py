@@ -345,7 +345,6 @@ def compute_thea(W):
 
 
 @reset_lsfs_global_value
-@get_object_value(utility.wrapper.LSFSFW)
 @timeit(utility.wrapper.LSFSTime)
 def LSFS(XL, YL, XU, gama = 10**-1):
     """

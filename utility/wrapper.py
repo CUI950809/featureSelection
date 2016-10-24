@@ -1,7 +1,6 @@
 LSFSCWTime = []
 LSFSGetWTime = []
 LSFSTime = []
-LSFSFW = []
 LSFSObejectV = []
 LSFSWObejectV = []
 
@@ -52,7 +51,6 @@ def reset_lsfs_global_value(fun):
         del LSFSTime[:]
         # LSFSTime = []这样来重置是错误的。LSFSTime = []相当于给了LSFSTime一块新的内存。
         # 但如果外部引用了原有的内存，那么对外部的内存并未重置。所以要用del LSFSTime[:]来删除
-        del LSFSFW[:]
         del LSFSObejectV[:]
         del LSFSWObejectV[:]
         result = fun(*args, **kwargs)

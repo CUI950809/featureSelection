@@ -14,7 +14,7 @@ from samples.conf import *
 
 from samples.conf import LSFS
 from utility.wrapper import LSFSObejectV, LSFSTime, LSFSGetWTime
-from utility.wrapper import LSFSCWTime, LSFSFW, LSFSWObejectV
+from utility.wrapper import LSFSCWTime, LSFSWObejectV
 
 LSFS.LSFS_NITER = 10
 LSFS.W_NITER = 50
@@ -23,7 +23,6 @@ CWTime = LSFSCWTime
 WObejectV = LSFSWObejectV
 ObejectV = LSFSObejectV
 LSFSTime = LSFSTime
-LSFSFW = LSFSFW
 
 
 """
@@ -87,24 +86,11 @@ def save_lsfs_time(fn):
     save_time(fn, fun_name, save_value)
 
 
-def save_lsfs_fw(output_path):
-    name = 'LSFSFW'
-    if len(LSFSFW) > 1:
-        print("too many result")
-    elif len(LSFSFW) == 1:
-        save_objectv(LSFSFW[0], name, output_path, sort_flag=True, reverse_flag=True)
-
-
 def test_result_time_and_obj(path, gama):
     # -------------------------save obj change--------------------------#
     objv_path = './test/obj_result/LSFS/'
     output_path = objv_path + path.split('data')[-1].strip()
     save_lsfs_objv(output_path + '/' + str(gama) + '/')
-
-    # -------------------------save result--------------------------#
-    fw_path = './test/fw_result/LSFS/'
-    output_path = fw_path + path.split('data')[-1].strip()
-    save_lsfs_fw(output_path + '/' + str(gama) + '/')
 
     # -------------------------save time--------------------------#
     fn = path.strip('/| |\n').split('/')[-1]

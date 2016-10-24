@@ -31,6 +31,7 @@ from utility.path_search import get_filepath_in_folders
 
 from utility.fea_io import fea_rank_read
 from utility.fea_io import fea_rank_write
+from utility.fea_io import fea_weight_write
 
 from utility.cal_accuracy import cal_acc_tabel
 from utility.my_plot import plot_acc_arr
