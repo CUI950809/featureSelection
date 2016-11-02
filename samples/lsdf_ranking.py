@@ -39,8 +39,8 @@ def main():
         fea_rank_write(new_path, fn, feature_order_list, exc_fun_label, fidx)
 
         # -------------------------save time--------------------------#
-        fn = path.strip('/| |\n').split('/')[-1]
-        save_lsdf_time(fn)
+        lsdf_time_fn = path.strip('/| |\n').split('/')[-1]
+        save_lsdf_time(lsdf_time_fn)
 
     fr = fea_rank_read(['lsdf'])
     for feature_rank_table, path in fr:

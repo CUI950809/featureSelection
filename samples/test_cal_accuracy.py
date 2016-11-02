@@ -10,16 +10,33 @@ def test_cal_accracy():
 
     # dname_list = ['adenocarcinoma', 'brain', 'breast.2.class', 'breast.3.class']
     dname_list = {
-    'Glass Identification(214x9)':[1*i for i in range(1,10)],
-    'SPECTF Heart(188x44)':[5*i for i in range(1,9)],
-    'LibrasMovement(360x90)':[5*i for i in range(1,11)],
-    'Hill_Valley_without_noise_Testing(606x100)':[5*i for i in range(1,11)],
-    'Hill_Valley_with_noise_Testing(606x100)':[5*i for i in range(1,11)],
-    'Musk(476x166)':[10*i for i in range(1,11)],
-    'LSVT_feature_names(126x310)':[20*i for i in range(1,11)]
+    # 'Glass Identification(214x9)':[1*i for i in range(1,10)],
+    # 'SPECTF Heart(188x44)':[5*i for i in range(1,9)],
+    # 'LibrasMovement(360x90)':[5*i for i in range(1,11)],
+    # 'Hill_Valley_without_noise_Testing(606x100)':[5*i for i in range(1,11)],
+    # 'Hill_Valley_with_noise_Testing(606x100)':[5*i for i in range(1,11)],
+    # 'Musk(476x166)':[10*i for i in range(1,11)],
+    # 'LSVT_feature_names(126x310)':[20*i for i in range(1,11)],
+    
+    '../data/optdigits(5620x63)/':[5*i for i in range(1,11)],
+    '../data/MADELON(2000x600)/':[20*i for i in range(1,21)],
+    '../data/isolet5(7797x617)/':[20*i for i in range(1,21)],
+    '../data/multiple_feature(2000x649)/':[20*i for i in range(1,21)],
+    '../data/CNAE-9(1080x856)/':[30*i for i in range(1,21)],
+    '../data/colon(62x2000)/':[50*i for i in range(1,21)],
+    '../data/srbct(63x2308)/':[50*i for i in range(1,21)],
+    '../data/leukemia(38x3051)/':[50*i for i in range(1,21)],
+    '../data/lymphoma(62x4026)/':[50*i for i in range(1,21)],
+    '../data/breast.2.class(77x4869)/':[50*i for i in range(1,21)],
+    '../data/breast.3.class(95x4869)/':[50*i for i in range(1,21)],
+    '../data/nci(61x5244)/':[50*i for i in range(1,21)],
+    '../data/brain(42x5597)/':[50*i for i in range(1,21)],
+    '../data/prostate(102x6033)/':[50*i for i in range(1,21)],
+    '../data/adenocarcinoma(76x9868)/':[50*i for i in range(1,21)]
     }
 
-    frr = fea_rank_read(['lsfs', 'fisher', 'lsdf', 'sselect', 'prpc', 'laplacian'])
+    # frr = fea_rank_read(['lsfs', 'fisher', 'lsdf', 'sselect', 'prpc', 'laplacian'])
+    frr = fea_rank_read(['fisher', 'lsdf', 'sselect', 'prpc', 'laplacian'])
     rank_paths = [];
     feature_rank_table_list = [];
     for feature_rank_table, path in frr:

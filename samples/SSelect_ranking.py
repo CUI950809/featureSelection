@@ -24,8 +24,11 @@ def main():
     test_foldth = 3
     fn = 'SSelect_feature_rank_{0}.txt'.format(test_foldth)
 
-    theta_list = [10**i for i in range(-3,4)]
-    namuda_list = [i*0.1 for i in range(0,11)]
+    # theta_list = [10**i for i in range(-3,4)]
+    # namuda_list = [i*0.1 for i in range(0,11)]
+    theta_list = [0.1]
+    namuda_list = [1, 0.5, 0.1]
+    # namuda_list = [0.3]
 
     tt = get_traintest(test_foldth=test_foldth)
     for x_train, y_train, x_test, y_test, path in tt:
@@ -36,14 +39,15 @@ def main():
         fidx = range(num_fea)
         for theta in theta_list:
             for namuda in namuda_list:
+                print(namuda)
                 fc = SSelect.SSelect(x_train[:,:num_fea], y_train, x_test[:,:num_fea], theta = theta, namuda=namuda)
                 rf = SSelect.feature_ranking(fc)
                 exc_fun_label.append("{0}_theta({1})_namuda({2})".format(SSelect.SSelect.__name__, theta, namuda))
                 feature_order_list.append(rf)
 
                 # -------------------------save time--------------------------#
-                fn = path.strip('/| |\n').split('/')[-1]
-                save_SSelect_time(fn)
+                SSelect_time_fn = path.strip('/| |\n').split('/')[-1]
+                save_SSelect_time(SSelect_time_fn)
 
         fn = fn.format(test_foldth)
         new_path = output_path + path.split('data')[-1].strip()

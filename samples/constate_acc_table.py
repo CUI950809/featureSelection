@@ -45,15 +45,32 @@ def constate_acc_table(in_path_list, out_path_list, fn):
         plot_acc_arr(max_acc_table, picture_path=out_path_list[fpidx] + '/' + 'max_' + fn + '.png')
 
 
+
 if __name__ == '__main__':
     path_list = [
-        '../samples/result/Glass Identification(214x9)',
-        '../samples/result/SPECTF Heart(188x44)',
-        '../samples/result/LibrasMovement(360x90)',
-        '../samples/result/Hill_Valley_without_noise_Testing(606x100)',
-        '../samples/result/Hill_Valley_with_noise_Testing(606x100)',
-        '../samples/result/Musk(476x166)',
-        '../samples/result/LSVT_feature_names(126x310)'
+        # '../samples/result/Glass Identification(214x9)',
+        # '../samples/result/SPECTF Heart(188x44)',
+        # '../samples/result/LibrasMovement(360x90)',
+        # '../samples/result/Hill_Valley_without_noise_Testing(606x100)',
+        # '../samples/result/Hill_Valley_with_noise_Testing(606x100)',
+        # '../samples/result/Musk(476x166)',
+        # '../samples/result/LSVT_feature_names(126x310)',
+
+        '../data/optdigits(5620x63)/',
+        '../data/MADELON(2000x600)/',
+        '../data/isolet5(7797x617)/',
+        '../data/multiple_feature(2000x649)/',
+        '../data/CNAE-9(1080x856)/',
+        '../data/colon(62x2000)/',
+        '../data/srbct(63x2308)/',
+        '../data/leukemia(38x3051)/',
+        '../data/lymphoma(62x4026)/',
+        '../data/breast.2.class(77x4869)/',
+        '../data/breast.3.class(95x4869)/',
+        '../data/nci(61x5244)/',
+        '../data/brain(42x5597)/',
+        '../data/prostate(102x6033)/',
+        '../data/adenocarcinoma(76x9868)/'
     ]
 
     output_path = './acc_result/'
