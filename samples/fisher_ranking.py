@@ -39,8 +39,8 @@ def main():
         fea_rank_write(new_path, fn, feature_order_list, exc_fun_label, fea_idxs)
 
         # -------------------------save time--------------------------#
-        fn = path.strip('/| |\n').split('/')[-1]
-        save_FisherScore_time(fn)
+        FisherScore_time_fn = path.strip('/| |\n').split('/')[-1]
+        save_FisherScore_time(FisherScore_time_fn)
 
 
     fr = fea_rank_read(['fisher'])

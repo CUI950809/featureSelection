@@ -27,7 +27,8 @@ def LSFS_ranking():
     feaRank_fn = '/LSFS_feature_rank_{0}.txt'
     feaWeight_fn = '/LSFS_weight_{0}'
     test_foldth = 3
-    gamma_list = [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    # gamma_list = [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    gamma_list = [0.01, 1,1000]
 
     tt = get_traintest(test_foldth=test_foldth)
 
@@ -61,7 +62,7 @@ def LSFS_ranking():
                          sort_flag=True, reverse_flag=True)
 
         # -------------------------save feature ranking--------------------------#
-        # fea_rank_write(new_ranking_path, feaRank_fn, feature_order_list, exc_fun_label, fidx)
+        fea_rank_write(new_ranking_path, feaRank_fn, feature_order_list, exc_fun_label, fidx)
 
     fr = fea_rank_read(['lsfs'])
     for feature_rank_table, path in fr:

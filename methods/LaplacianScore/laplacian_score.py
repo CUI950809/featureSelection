@@ -86,10 +86,10 @@ def compute_laplacian_score(x_train, L, D):
         c = np.dot( np.dot( x_fi_new.T, L ), x_fi_new )
         d = np.dot( np.dot( x_fi_new.T, D ), x_fi_new )
 
-        d = np.maximum(d, 10 ** -8)
-        L_i =  c / d
-
-        feature_laplacian_score[f_i] = L_i
+        if d == 0:
+            feature_laplacian_score[f_i] = float("inf")
+        else:
+            feature_laplacian_score[f_i] = c / d
 
     return feature_laplacian_score
 

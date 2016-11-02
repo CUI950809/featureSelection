@@ -22,7 +22,7 @@ def main():
     # new_paths = ['./ranking_result/' + p.split('data')[-1].strip() for p in paths]
     output_path = './ranking_result/'
     test_foldth = 3
-    select_fea = 500
+    select_fea = 1000
 
     fn = 'PRPC_feature_rank_fold{0}_fea{1}.txt'
 
@@ -54,8 +54,8 @@ def main():
         fea_rank_write(new_path, fn, feature_order_list, exc_fun_label, fidx)
 
         # -------------------------save time--------------------------#
-        fn = path.strip('/| |\n').split('/')[-1]
-        save_PRPC_time(fn)
+        PRPC_time_fn = path.strip('/| |\n').split('/')[-1]
+        save_PRPC_time(PRPC_time_fn)
 
     fr = fea_rank_read(['PRPC'])
     for feature_rank_table, path in fr:

@@ -25,7 +25,8 @@ def main():
     fn = 'laplacian_score_feature_rank_{0}.txt'.format(test_foldth)
 
     k = 10
-    t_list = [10**i for i in range(-3,4)]
+    # t_list = [10**i for i in range(-3,4)]
+    t_list = [0.01, 0.1, 1]
 
     tt = get_traintest(test_foldth=test_foldth)
     for x_train, y_train, x_test, y_test, path in tt:
@@ -43,8 +44,8 @@ def main():
             feature_order_list.append(lap_score_ranking)
 
             # -------------------------save time--------------------------#
-            fn = path.strip('/| |\n').split('/')[-1]
-            save_LaplacianScore_time(fn)
+            LaplacianScore_fn = path.strip('/| |\n').split('/')[-1]
+            save_LaplacianScore_time(LaplacianScore_fn)
 
         fn = fn.format(test_foldth)
         new_path = output_path + path.split('data')[-1].strip()

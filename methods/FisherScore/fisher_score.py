@@ -60,11 +60,14 @@ def fisher_score(X, y):
             sum_1 += n_fi_cj*(sum(fi_cj_mean - fi_mean)**2)
             sum_2 += n_fi_cj*(fi_cj_var**2)
 
-        # pretect sum_2 from zeros
-        if sum_2 < 1e-12:
-            sum_2 = 1e-6
-
-        score[f_i] = sum_1/sum_2
+        if sum_2 == 0:
+            if sum_1 == 0:
+                score[f_i] = float("-inf")
+            else:
+                sum_2 = np.maximum(sum_1, 10**-8)
+                score[f_i] = sum_1/sum_2
+        else:
+            score[f_i] = sum_1/sum_2
     return score
 
 

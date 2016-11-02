@@ -10,16 +10,33 @@ def test_cal_accracy():
 
     # dname_list = ['adenocarcinoma', 'brain', 'breast.2.class', 'breast.3.class']
     dname_list = {
-    'Glass Identification(214x9)':[1*i for i in range(1,10)],
-    'SPECTF Heart(188x44)':[5*i for i in range(1,9)],
-    'LibrasMovement(360x90)':[5*i for i in range(1,11)],
-    'Hill_Valley_without_noise_Testing(606x100)':[5*i for i in range(1,11)],
-    'Hill_Valley_with_noise_Testing(606x100)':[5*i for i in range(1,11)],
-    'Musk(476x166)':[10*i for i in range(1,11)],
-    'LSVT_feature_names(126x310)':[20*i for i in range(1,11)]
+    # 'Glass Identification(214x9)':[1*i for i in range(1,10)],
+    # 'SPECTF Heart(188x44)':[5*i for i in range(1,9)],
+    # 'LibrasMovement(360x90)':[5*i for i in range(1,11)],
+    # 'Hill_Valley_without_noise_Testing(606x100)':[5*i for i in range(1,11)],
+    # 'Hill_Valley_with_noise_Testing(606x100)':[5*i for i in range(1,11)],
+    # 'Musk(476x166)':[10*i for i in range(1,11)],
+    # 'LSVT_feature_names(126x310)':[20*i for i in range(1,11)],
+
+    'optdigits(5620x63)':[5*i for i in range(1,11)],
+    'MADELON(2000x600)':[20*i for i in range(1,21)],
+    'isolet5(7797x617)':[20*i for i in range(1,21)],
+    'multiple_feature(2000x649)':[20*i for i in range(1,21)],
+    'CNAE-9(1080x856)':[30*i for i in range(1,21)],
+    'colon(62x2000)':[50*i for i in range(1,21)],
+    'srbct(63x2308)':[50*i for i in range(1,21)],
+    'leukemia(38x3051)':[50*i for i in range(1,21)],
+    'lymphoma(62x4026)':[50*i for i in range(1,21)],
+    'breast.2.class(77x4869)':[50*i for i in range(1,21)],
+    'breast.3.class(95x4869)':[50*i for i in range(1,21)],
+    'nci(61x5244)':[50*i for i in range(1,21)],
+    'brain(42x5597)':[50*i for i in range(1,21)],
+    'prostate(102x6033)':[50*i for i in range(1,21)],
+    'adenocarcinoma(76x9868)':[50*i for i in range(1,21)]
     }
 
     frr = fea_rank_read(['lsfs', 'fisher', 'lsdf', 'sselect', 'prpc', 'laplacian'])
+    # frr = fea_rank_read(['fisher', 'lsdf', 'sselect', 'prpc', 'laplacian'])
     rank_paths = [];
     feature_rank_table_list = [];
     for feature_rank_table, path in frr:

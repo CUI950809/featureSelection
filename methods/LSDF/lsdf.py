@@ -152,8 +152,16 @@ def compute_Lr(x_labeled, x_unlabeled, Lw, Lb):
         x_fi = x[:, f_i:f_i+1]
         a = np.dot( np.dot( x_fi.T, Lb ), x_fi)
         b = np.dot( np.dot( x_fi.T, Lw ), x_fi)
-        b = np.maximum(b, 10**-8)
-        Lr[f_i] = a / b
+
+        if b == 0:
+            if a == 0:
+                Lr[f_i] = float("-inf")
+            else:
+                np.maximum(b, 10 ** -8)
+                Lr[f_i] = a / b
+        else:
+            Lr[f_i] = a / b
+
     return Lr
 
 
