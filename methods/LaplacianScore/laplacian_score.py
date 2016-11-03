@@ -6,6 +6,7 @@ from methods.LaplacianScore.conf import *
 from .conf import timeit
 from .conf import reset_LaplacianScore_global_value
 import utility.wrapper
+from .conf import *
 
 
 def compute_S(x_train, k = 10, t = 100):
@@ -23,7 +24,7 @@ def compute_S(x_train, k = 10, t = 100):
     S_new: {numpy array}, shape {n_samples, n_samples}.
     """
     gama = 1.0/t
-    S = pairwise_kernels(x_train, metric='rbf', n_jobs=1)
+    # S = pairwise_kernels(x_train, metric='rbf', n_jobs=1)
 
     square_distance_m = pairwise_distances(x_train, metric='euclidean', squared=True , n_jobs=1)
     knn_flag_m = get_knn_flag(square_distance_m, k= k+1)
